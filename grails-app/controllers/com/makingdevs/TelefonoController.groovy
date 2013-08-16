@@ -1,6 +1,5 @@
 package com.makingdevs
 
-import com.stele.seguridad.Usuario
 import grails.converters.JSON
 import com.makingdevs.*
 
