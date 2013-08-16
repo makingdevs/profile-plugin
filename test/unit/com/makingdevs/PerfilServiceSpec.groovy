@@ -1,4 +1,4 @@
-package com.stele
+package com.makingdevs
 
 import static org.junit.Assert.*
 
