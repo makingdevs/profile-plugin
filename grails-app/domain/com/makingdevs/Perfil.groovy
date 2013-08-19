@@ -7,7 +7,7 @@ class Perfil {
   String apellidoMaterno
   Date fechaDeNacimiento
   Sexo sexo = Sexo.QUIMERA
-  String avatar = "http://www.nelson-rives.com/images/noUserPhoto.png"
+  String avatar = "http://www.sparkcentral.co.uk/images/user-anonymous.png"
 
   static hasMany = [direccion: Direccion, telefonos: Telefono]
 
