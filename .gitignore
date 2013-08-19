@@ -1,3 +1,7 @@
 target/
 *.swp
 .gitignore.swp
+grails-app/views/sample/
+*.zip
+*.sha1
+plugin.xml
