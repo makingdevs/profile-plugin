@@ -1,11 +1,9 @@
 grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
-grails.project.groupId = 'com.makingdevs'
-grails.project.version = '0.1'
 
 grails.project.repos.myRepo.url = "http://localhost:8081/nexus/content/repositories/thirdparty"
-//grails.project.repos.myRepo.type = "maven"
+grails.project.repos.myRepo.type = "maven"
 grails.project.repos.myRepo.username = "admin"
 grails.project.repos.myRepo.password = "admin123"
 
