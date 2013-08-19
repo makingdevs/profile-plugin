@@ -1,5 +1,3 @@
-grails.project.groupId = 'com.makingdevs'
-grails.project.version = '0.1'
 // configuration for plugin testing - will not be included in the plugin zip
 
 log4j = {
