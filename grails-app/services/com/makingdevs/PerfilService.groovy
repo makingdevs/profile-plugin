@@ -12,8 +12,8 @@ class PerfilService {
     usuario
   }
 
-  def obtenerPerfilDeUsuario(def dependiente) {
-    Perfil.findById(dependiente.perfilId)
+  def obtenerPerfilDeUsuario(def perfilId) {
+    Perfil.findById(perfilId)
   }
 
 }
