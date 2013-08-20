@@ -1,5 +1,6 @@
 class ProfileGrailsPlugin {
-  def version = "0.1"
+  def groupId = "com.makingdevs"
+  def version = "0.1.2"
   def grailsVersion = "2.0 > *"
   //def dependsOn = ["spring-security-core":"1.2.7.0 > 1.2.7.4" ]
   def pluginExcludes = [
