@@ -22,6 +22,16 @@ class TelefonoController {
     render template:"/telefono/list", model:[telefonos:perfil.telefonos]
   }
 
+  def borrarTelefonoASync(){
+    def usuario = springSecurityService.currentUser
+    Telefono telefono = Telefono.get(params.id)
+    Perfil perfil = usuario.perfil
+    perfil.removeFromTelefonos(telefono)
+    telefono.delete()
+    perfil.save(flush:true)
+    render template:"/telefono/list", model:[telefonos:perfil.telefonos]
+  }
+
 }
 
 class TelefonoCommand {
