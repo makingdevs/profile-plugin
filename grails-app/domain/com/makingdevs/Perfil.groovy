@@ -9,6 +9,10 @@ class Perfil {
   Sexo sexo = Sexo.QUIMERA
   String avatar = "http://www.sparkcentral.co.uk/images/user-anonymous.png"
 
+  static searchable = {
+    root false
+  }
+  
   static hasMany = [direccion: Direccion, telefonos: Telefono]
 
   Date dateCreated
