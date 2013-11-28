@@ -14,7 +14,7 @@ class Perfil {
   static searchable = {
     root false
   }
-  
+
   static hasMany = [direccion: Direccion, telefonos: Telefono]
 
   Date dateCreated
