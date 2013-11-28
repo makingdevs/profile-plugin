@@ -1,5 +1,7 @@
 package com.makingdevs
 
+import org.grails.s3.S3Asset
+
 class Perfil {
 
   String nombre
@@ -7,7 +9,7 @@ class Perfil {
   String apellidoMaterno
   Date fechaDeNacimiento
   Sexo sexo = Sexo.QUIMERA
-  String avatar = "http://www.sparkcentral.co.uk/images/user-anonymous.png"
+  S3Asset avatar
 
   static searchable = {
     root false
@@ -23,7 +25,7 @@ class Perfil {
     apellidoPaterno size:1..50,blank:false
     apellidoMaterno size:1..50,blank:true,nullable:true
     fechaDeNacimiento nullable:true
-    avatar url:true
+    avatar nullable:true
   }
 
   String nombreCompleto() {
