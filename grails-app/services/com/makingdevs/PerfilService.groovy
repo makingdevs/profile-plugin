@@ -33,4 +33,11 @@ class PerfilService {
     perfil
   }
 
+  def eliminarImagenPerfil(Long perfilId) {
+    def perfil = Perfil.get(perfilId)
+    s3AssetService.delete(perfil.avatar)
+    perfil.avatar = null
+    perfil.save()
+  }
+
 }
