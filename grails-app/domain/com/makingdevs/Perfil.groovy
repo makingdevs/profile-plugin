@@ -10,7 +10,7 @@ class Perfil {
   Date fechaDeNacimiento
   Sexo sexo = Sexo.QUIMERA
   S3Asset avatar
-  Boolean publico = false
+  Boolean publicProfile = false
 
   static searchable = {
     root false
@@ -26,7 +26,7 @@ class Perfil {
     apellidoPaterno size:1..50,blank:false
     apellidoMaterno size:1..50,blank:true,nullable:true
     fechaDeNacimiento nullable:true
-    publico blank:false,nullable:false
+    publicProfile blank:false,nullable:false
     avatar nullable:true
   }
 
