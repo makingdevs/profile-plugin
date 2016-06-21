@@ -63,6 +63,7 @@ dependencies {
     compile "org.grails.plugins:scaffolding"
     compile "org.grails.plugins:amazon-s3:0.8.2"
     compile "org.grails.plugins:quartz:1.0-RC13"
+    compile group: 'com.amazonaws', name: 'aws-java-sdk', version: '1.11.5'
     console "org.grails:grails-console"
     profile "org.grails.profiles:web-plugin:3.1.8"
     provided "org.grails:grails-plugin-services"
