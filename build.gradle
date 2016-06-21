@@ -1,0 +1,108 @@
+buildscript {
+    ext {
+        grailsVersion = project.grailsVersion
+    }
+    repositories {
+        mavenLocal()
+        maven { url "https://repo.grails.org/grails/core" }
+    }
+    dependencies {
+        classpath "org.grails:grails-gradle-plugin:$grailsVersion"
+        classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.8.2"
+    }
+}
+
+version "0.2.00"
+group "com.makingdevs"
+
+apply plugin:"org.grails.grails-plugin"
+apply plugin:"org.grails.grails-plugin-publish"
+apply plugin:"org.grails.grails-gsp"
+apply plugin:"asset-pipeline"
+
+ext {
+    grailsVersion = project.grailsVersion
+    gradleWrapperVersion = project.gradleWrapperVersion
+}
+
+/*grails.project.class.dir = "target/classes"
+grails.project.test.class.dir = "target/test-classes"
+grails.project.test.reports.dir = "target/test-reports"
+
+grails.project.repos.md.url = "http://makingdevs.com:8081/nexus/content/repositories/thirdparty"
+grails.project.repos.md.username = "deployment"
+grails.project.repos.md.password = "d3pl0ym3nt"*/
+
+
+repositories {
+    mavenLocal()
+    maven { url "https://repo.grails.org/grails/core" }
+    mavenCentral()
+    maven { url "http://snapshots.repository.codehaus.org" }
+    maven { url "http://repository.codehaus.org" }
+    maven { url "http://download.java.net/maven/2/" }
+    maven { url "http://repository.jboss.com/maven2/" }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.grails:grails-bom:$grailsVersion"
+    }
+    applyMavenExclusions false
+}
+
+dependencies {
+    compile "org.springframework.boot:spring-boot-starter-logging"
+    compile "org.springframework.boot:spring-boot-autoconfigure"
+    compile "org.grails:grails-core"
+    compile "org.springframework.boot:spring-boot-starter-actuator"
+    compile "org.springframework.boot:spring-boot-starter-tomcat"
+    compile "org.grails:grails-dependencies"
+    compile "org.grails:grails-web-boot"
+    compile "org.grails.plugins:cache"
+    compile "org.grails.plugins:scaffolding"
+    compile "org.grails.plugins:amazon-s3:0.8.2"
+    compile "org.grails.plugins:quartz:1.0-RC13"
+    console "org.grails:grails-console"
+    profile "org.grails.profiles:web-plugin:3.1.8"
+    provided "org.grails:grails-plugin-services"
+    provided "org.grails:grails-plugin-domain-class"
+    runtime "com.bertramlabs.plugins:asset-pipeline-grails:2.8.2"
+    testCompile "org.grails:grails-plugin-testing"
+    testCompile "org.grails.plugins:geb"
+    testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
+    testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+    testRuntime "org.spockframework:spock-grails-support:0.7-groovy-2.0"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = gradleWrapperVersion
+}
+
+grailsPublish {
+    // TODO: Provide values here
+    user = 'user'
+    key = 'key'
+    githubSlug = 'foo/bar'
+    license {
+        name = 'Apache-2.0'
+    }
+    title = "Profile Plugin"
+    desc = "This plugin is intended to externalize behavior and features to manage the profile for each user using Spring Security"
+    /*developers = [
+      [ name: "Sergio Rodríguez", email: "sergio@makingdevs.com" ],
+      [ name: "Felipe Juárez", email: "felipe@makingdevs.com" ],
+      [ name: "Rodrigo Martínez", email: "rockdrigo.mtz@gmail.com" ],
+      [ name: "José Juan Reyes", email: "juan@makingdevs.com" ]
+    ]*/
+    portalUser = ""
+    portalPassword = ""
+}
+
+assets {
+    packagePlugin = true
+}
+
+jar {
+ exclude "grails-app/views/error.gsp"
+}
