@@ -1,7 +1,5 @@
 package com.makingdevs
 
-import org.grails.s3.S3Asset
-
 class Perfil {
 
   String nombre
@@ -9,7 +7,7 @@ class Perfil {
   String apellidoMaterno
   Date fechaDeNacimiento
   Sexo sexo = Sexo.QUIMERA
-  S3Asset avatar
+  String avatar
   Boolean publicProfile = false
 
   static searchable = {
