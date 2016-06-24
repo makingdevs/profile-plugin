@@ -6,3 +6,4 @@ grails-app/views/sample/
 *.sha1
 plugin.xml
 build/
+.gradle
