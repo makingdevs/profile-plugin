@@ -94,12 +94,7 @@ grailsPublish {
     }
     title = "Profile Plugin"
     desc = "This plugin is intended to externalize behavior and features to manage the profile for each user using Spring Security"
-    /*developers = [
-      [ name: "Sergio Rodríguez", email: "sergio@makingdevs.com" ],
-      [ name: "Felipe Juárez", email: "felipe@makingdevs.com" ],
-      [ name: "Rodrigo Martínez", email: "rockdrigo.mtz@gmail.com" ],
-      [ name: "José Juan Reyes", email: "juan@makingdevs.com" ]
-    ]*/
+    developers = [sergioR:"Sergio Rodríguez",felipeJ:"Felipe Juárez",rodrigoM:"Rodrigo Martínez",joseJ:"José Juan Reyes"]
     portalUser = ""
     portalPassword = ""
 }
