@@ -36,9 +36,9 @@ class PerfilService {
     try {
       s3client.putObject(new PutObjectRequest(bucket, file.name, file).withCannedAcl(CannedAccessControlList.PublicRead));
     } catch (AmazonServiceException asEx){
-      throw new FacturaException(asEx.getMessage())
+      throw new RuntimeException(asEx.getMessage())
     } catch (AmazonClientException acEx){
-      throw new FacturaException(acEx.getMessage())
+      throw new RuntimeException(acEx.getMessage())
     }
     url = "${bucket}.${urlS3}/${file.name}"
 
