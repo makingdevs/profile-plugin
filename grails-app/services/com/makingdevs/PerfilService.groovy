@@ -26,6 +26,11 @@ class PerfilService {
 
   def subirImagenPerfil(Long perfilId, file) {
     Perfil perfil = Perfil.get(perfilId)
+    String url = ""
+    String accessKey = "AKIAJZESLWAOCXVIRVPA"
+    String secretKey = "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"
+    String bucket = "makingdevs.com.dev"
+    String urlS3 = "s3.amazonaws.com"
 
     AmazonS3 s3client = new AmazonS3Client(new BasicAWSCredentials(accessKey, secretKey))
     try {
