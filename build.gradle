@@ -12,7 +12,7 @@ buildscript {
     }
 }
 
-version "0.2.00"
+version "0.2.0"
 group "com.makingdevs"
 
 apply plugin:"org.grails.grails-plugin"
@@ -62,8 +62,6 @@ dependencies {
     compile "org.grails.plugins:cache"
     compile "org.grails.plugins:scaffolding"
 
-    compile "org.grails.plugins:amazon-s3:0.8.2"
-    compile "org.grails.plugins:quartz:1.0-RC13"
     compile group: 'com.amazonaws', name: 'aws-java-sdk', version: '1.11.5'
 
     console "org.grails:grails-console"
