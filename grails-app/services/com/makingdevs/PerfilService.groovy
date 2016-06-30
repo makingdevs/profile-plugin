@@ -9,6 +9,7 @@ import com.amazonaws.services.s3.model.CannedAccessControlList
 import com.amazonaws.services.s3.model.PutObjectRequest
 
 class PerfilService {
+  def grailsApplication
 
   def registrar(Perfil perfil) {
     perfil.save()
@@ -27,10 +28,10 @@ class PerfilService {
   def subirImagenPerfil(Long perfilId, file) {
     Perfil perfil = Perfil.get(perfilId)
     String url = ""
-    String accessKey = ""
-    String secretKey = ""
-    String bucket = "makingdevs.com.dev"
-    String urlS3 = "s3.amazonaws.com"
+    String accessKey = grailsApplication.aws.accessKey
+    String secretKey = grailsApplication.aws.secretKey
+    String bucket = grailsApplication.aws.bucketName
+    String urlS3 = grailsApplication.aws.domain
 
     AmazonS3 s3client = new AmazonS3Client(new BasicAWSCredentials(accessKey, secretKey))
     try {
