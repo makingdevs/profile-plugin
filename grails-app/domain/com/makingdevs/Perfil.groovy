@@ -7,7 +7,7 @@ class Perfil {
   String apellidoMaterno
   Date fechaDeNacimiento
   Sexo sexo = Sexo.QUIMERA
-  String avatar
+  S3Asset avatar
   Boolean publicProfile = false
 
   static searchable = {
