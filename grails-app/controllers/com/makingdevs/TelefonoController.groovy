@@ -19,7 +19,7 @@ class TelefonoController {
     Telefono telefono = new Telefono(cmd.properties)
     perfil.addToTelefonos(telefono)
     perfil.save(flush:true)
-    render template:"/telefono/list", model:[telefonos:perfil.telefonos]
+    redirect(controller: 'perfil', action: 'index')
   }
 
   def borrarTelefonoASync(){
@@ -29,7 +29,7 @@ class TelefonoController {
     perfil.removeFromTelefonos(telefono)
     telefono.delete()
     perfil.save(flush:true)
-    render template:"/telefono/list", model:[telefonos:perfil.telefonos]
+    redirect(controller: 'perfil', action: 'index')
   }
 
 }
